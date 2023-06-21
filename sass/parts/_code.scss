@@ -2,12 +2,13 @@ code {
     background-color: var(--bg-1);
     padding: 0.1em 0.2em;
     font-family: var(--code-font);
-    font-size: 0.7em;
+    font-size: 0.9em;
 }
 
 pre {
     border: 1px solid var(--border-color);
-    line-height: 1.2;
+    font-size: 0.75em;
+    line-height: 1.4;
     overflow-x: auto;
     padding: 1em;
     position: relative;
