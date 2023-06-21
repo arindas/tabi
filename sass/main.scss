@@ -15,10 +15,9 @@
 }
 
 @font-face {
-    /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Cascadia Code';
-    src: local('Cascadia Code'),
-        url('fonts/CascadiaCode-SemiLight.woff2') format("woff2");
+    font-family: 'JetBrains Mono';
+    src: local('JetBrains Mono'),
+        url('fonts/JetBrainsMono-Regular.woff2') format("woff2");
     font-display: swap;
 }
 
@@ -47,7 +46,7 @@
 
     --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
     --serif-font: 'Source Serif', 'Georgia', serif;
-    --code-font: 'Cascadia Code';
+    --code-font: 'JetBrains Mono';
 
     font-family: var(--sans-serif-font);
     line-height: 190%;
@@ -125,7 +124,8 @@ article {
 
     p,
     li {
-        font-family: var(--serif-font);
+        font-family: 'Arial', var(--sans-serif-font);
+        line-height: 170%;
     }
 }
 

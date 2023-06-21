@@ -25,7 +25,6 @@ For further optimisation, you can create a custom font subset that only includes
 Install these tools:
 
 - [fonttools](https://github.com/fonttools/fonttools)
-
 - [brotli](https://github.com/google/brotli)
 
 Run `pip install fonttools brotli` to install both.
