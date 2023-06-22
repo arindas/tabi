@@ -41,6 +41,10 @@ ul {
     border-bottom: var(--divider-color) solid 0.5px;
 }
 
+.page-break {
+    page-break-before: always;
+}
+
 ::-moz-selection {
     background: var(--primary-color);
     color: var(--hover-color);
@@ -62,7 +66,7 @@ p {
 
 hr {
     border: 0;
-    border-top: 3px solid var(--border-color);
+    border-top: 3px solid var(--divider-color);
     margin: 1em 0;
 }
 
