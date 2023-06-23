@@ -10,9 +10,20 @@ pre {
     font-size: 0.75em;
     line-height: 1.4;
     overflow-x: auto;
-    padding: 1em;
     position: relative;
     -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 900px) {
+    pre {
+        padding: 1.6em;
+    }
+}
+
+@media (max-width: 900px) {
+    pre {
+        padding: 1em;
+    }
 }
 
 pre code {
@@ -21,6 +32,13 @@ pre code {
     padding: 0;
     border: 0;
 }
+
+@media (max-width: 900px) {
+    pre code[class*="language-"]::before {
+        display: none;
+    }
+}
+
 
 pre code[class*="language-"] {
     -webkit-overflow-scrolling: touch;
@@ -95,6 +113,6 @@ pre code[class*="language-md"]::before {
 pre code[class*="language-rust"]::before,
 pre code[class*="language-rs"]::before {
     content: "rust";
-    background: #fff8f6;
-    color: #ff4647;
+    background: #ff4647;
+    color: #fff8f6;
 }
