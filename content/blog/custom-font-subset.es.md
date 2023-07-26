@@ -1,7 +1,7 @@
 +++
 title = "Optimiza la carga con un subconjunto de fuente personalizado"
 date = 2023-04-29
-updated = 2023-05-25
+updated = 2023-07-08
 description = "Aprende cómo crear un subconjunto personalizado que solo incluya los glifos necesarios."
 
 [taxonomies]
@@ -102,7 +102,7 @@ if [ ! -f "$font_file" ]; then
 fi
 
 # Extrae el título y los nombres de los menús del archivo de configuración.
-title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"' | grep -v "atom feed")
+title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"')
 menu_names=$(awk -F' = ' '/^menu/{f=1;next} /socials/{f=0} f && /name/{print $2}' "$config_file" | cut -d',' -f1 | tr -d '"' )
 language_names=$(awk -F' = ' '/^language_name\./{print $2}' "$config_file" | tr -d '"' )
 
@@ -144,13 +144,13 @@ Guarda el script en algún lugar como `~/bin/subset_font`. Hazlo ejecutable con 
 
 Ahora puedes ejecutarlo con las opciones requeridas `--config` y `--font`:
 
-```
+```bash
 ~/bin/subset_font --config path/to/config.toml --font path/to/font.woff2
 ```
 
 De forma predeterminada, esto generará un archivo `custom_subset.css` en el directorio actual. Usa `-o` o `--output` para especificar una ruta diferente:
 
-```
+```bash
 ~/bin/subset_font -c path/to/config.toml -f path/to/font.woff2 -o path/to/output
 ```
 

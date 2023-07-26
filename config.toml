@@ -1,6 +1,7 @@
 base_url = "https://welpo.github.io/tabi"
 title = "~/tabi"
 description = "tabi is a fast, lightweight, and modern Zola theme with multi-language support, optional JavaScript, and a perfect Lighthouse score."
+author = "welpo"
 generate_feed = true
 compile_sass = true
 minify_html = true
@@ -67,6 +68,7 @@ table_of_contents = "Tabla de contenido"
 last_updated_on = "Última actualización el"
 show_original_quote = "Mostrar cita original"
 show_translation = "Mostrar traducción"
+load_comments = "Cargar comentarios"
 # Quotation marks for multilingual quote shortcode.
 open_quotation_mark = "«"
 close_quotation_mark = "»"
@@ -100,6 +102,7 @@ table_of_contents = "Taula de contingut"
 last_updated_on = "Última actualizació el"
 show_original_quote = "Mostra la cita original"
 show_translation = "Mostra la traducció"
+load_comments = "Carregar comentaris"
 # Quotation marks for multilingual quote shortcode.
 open_quotation_mark = "«"
 close_quotation_mark = "»"
@@ -113,6 +116,9 @@ language_name.es = "Español"
 # Enable JavaScript theme toggler for dark/light mode (and automatic switching).
 # The default setting is the light theme.
 theme_switcher = true
+
+# Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
+copy_button = true
 
 # Date format used when listing posts (main page, /blog section, tag posts list…)
 # Default is "6th July 2049" in English and "%d %B %Y" in other languages.
@@ -173,3 +179,64 @@ allowed_domains = [
 # This avoids a flashing text issue in Firefox.
 # Please see https://welpo.github.io/tabi/blog/custom-font-subset/ to learn how to create this file.
 custom_subset = true
+
+# Quick navigation buttons.
+# Adds "go up" and "go to comments" buttons on the bottom right (hidden for mobile).
+# Can also be enabled on individual posts in the front matter's [extra].
+quick_navigation_buttons = false
+
+# giscus support for comments. https://giscus.app
+# Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup
+[extra.giscus]
+enabled_for_all_posts = false  # Enables giscus on all posts. It can be enabled on individual posts by setting `giscus = true` in the [extra] section of a post's front matter.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
+repo = "welpo/tabi-comments"
+repo_id = "R_kgDOJ59Urw"  # Find this value in https://giscus.app/
+category = "Announcements"
+category_id = "DIC_kwDOJ59Ur84CX0QG"  # Find this value in https://giscus.app/
+mapping = "slug"  # Available: pathname; url; title; slug. "slug" will use the post's filename (slug); this is the only way to share comments between languages.
+strict_title_matching = 1  # 1 to enable, 0 to disable. https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-strict
+enable_reactions = 1  # 1 to enable, 0 to disable.
+comment_box_above_comments = true
+light_theme = "noborder_light"
+dark_theme = "noborder_dark"
+lang = ""  # Leave blank to match the page's language.
+lazy_loading = true
+
+# utterances support for comments. https://utteranc.es
+# Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup
+[extra.utterances]
+enabled_for_all_posts = false  # Enables utterances on all posts. It can be enabled on individual posts by setting `utterances = true` in the [extra] section of a post's front matter.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
+repo = "yourGithubUsername/yourRepo"  # https://utteranc.es/#heading-repository
+issue_term = "slug"  # Available: pathname; url; title; slug. "slug" will use the post's filename (slug); this is the only way to share comments between languages. https://utteranc.es/#heading-mapping
+label = "💬"  # https://utteranc.es/#heading-issue-label
+light_theme = "github-light"  # https://utteranc.es/#heading-theme
+dark_theme = "photon-dark"  # https://utteranc.es/#heading-theme
+lazy_loading = true
+
+# Hyvor Talk support for comments. https://talk.hyvor.com
+[extra.hyvortalk]
+enabled_for_all_posts = false  # Enables hyvortalk on all posts. It can be enabled on individual posts by setting `hyvortalk = true` in the [extra] section of a post's front matter.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
+website_id = "1234"
+page_id_is_slug = true  # If true, it will use the post's filename (slug) as id; this is the only way to share comments between languages. If false, it will use the entire url as id.
+lang = ""  # Leave blank to match the page's language.
+page_author = ""  # Email (or base64 encoded email) of the author.
+lazy_loading = true
+
+# Isso support for comments. https://isso-comments.de/
+# You need to self-host the backend first: https://blog.phusion.nl/2018/08/16/isso-simple-self-hosted-commenting-system/
+# More info on some settings: https://isso-comments.de/docs/reference/client-config/
+[extra.isso]
+enabled_for_all_posts = false  # Enables Isso on all posts. It can be enabled on individual posts by setting `isso = true` in the [extra] section of a post's front matter.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
+endpoint_url = ""  # Accepts relative paths like "/comments/" or "/isso/", as well as full urls like "https://example.com/comments/". Include the trailing slash.
+page_id_is_slug = true  # If true, it will use the post's filename (slug) as id; this is the only way to share comments between languages. If false, it will use the entire url as id.
+lang = ""  # Leave blank to match the page's language.
+max_comments_top = "inf"  # Number of top level comments to show by default. If some comments are not shown, an “X Hidden” link is shown.
+max_comments_nested = "5"  # Number of nested comments to show by default. If some comments are not shown, an “X Hidden” link is shown.
+avatar = true
+voting = true
+page_author_hashes = ""  # hash (or list of hashes) of the author.
+lazy_loading = true  # Loads when the comments are in the viewport (using the Intersection Observer API).

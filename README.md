@@ -16,17 +16,19 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 - [X] Multi-language support.
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
+- [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [KaTeX](https://katex.org/) support.
-- [X] All JavaScript (theme switcher and KaTeX) can be fully disabled.
-- [X] Responsive design.
-- [X] Projects page.
-- [X] Archive page.
+- [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
+- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
+- [X] [Projects page](https://welpo.github.io/tabi/projects/).
+- [X] [Archive page](https://welpo.github.io/tabi/archive/).
 - [x] Tags.
 - [x] Social links.
+- [X] Responsive design.
 - [X] Code syntax highlighting.
+- [X] [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
 - [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
-- [X] Customizable secure headers.
 
 ## Quick start
 
@@ -108,7 +110,7 @@ The content outside the front matter will be rendered between the header title a
 - set the title and taxonomies for each language;
 - add the `language_name.{code}` in `[extra]`. This is the text shown in the language switcher.
 
-See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/dd73e527298c1c4357e48589314bfd9302323c27/config.toml#L19-L105) for an example.
+See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/6c8d5c750fe68d4a3c6fdfb623cccb12e62af7a5/config.toml#L20-L108) for an example.
 
 You will need an `_index.{language_code}.md` per language for each section (e.g. /blog or /projects) that you want to enable in that language.
 

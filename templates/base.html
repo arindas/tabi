@@ -6,6 +6,7 @@
 {% import "macros/set_title.html" as macros_set_title %}
 {% import "macros/paginate.html" as macros_paginate %}
 {% import "macros/format_date.html" as macros_format_date %}
+{% import "macros/add_comments.html" as macros_add_comments %}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}">
@@ -22,11 +23,16 @@
     </div>
     {% include "partials/footer.html" %}
 
-    {% if page.extra.katex and page.extra.katex == true %}
-        <link rel="stylesheet" href="{{ get_url(path='katex_min.css', trailing_slash=false) | safe }}">
+    {# Add KaTeX functionality (loads CSS and JS) #}
+    {%- if page.extra.katex and page.extra.katex == true -%}
+        <link rel="stylesheet" href="{{ get_url(path='katex.min.css', trailing_slash=false) | safe }}">
+        <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
+    {%- endif -%}
 
-        <script defer src="{{ get_url(path='js/katex_min.js', trailing_slash=false) | safe }}"></script>
-    {% endif %}
+    {# Add copy button to codeblocks #}
+    {%- if config.extra.copy_button and config.extra.copy_button == true -%}
+        <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"/></script>
+    {%- endif -%}
 </body>
 
 </html>

@@ -37,6 +37,10 @@ ul {
     margin-bottom: 4vmin;
 }
 
+.padding-top {
+    padding-top: 4vmin;
+}
+
 .title-container {
     padding-bottom: 15px;
 }
@@ -116,35 +120,6 @@ a:not(.no-hover-padding):hover::before {
     }
 }
 
-table {
-    justify-self: center;
-    font: inherit;
-    overflow: hidden;
-    border-style: hidden !important;
-    margin: 2rem 0;
-    min-width: 400px;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 13rem;
-}
-
-table thead tr {
-    background-color: var(--primary-color);
-    color: var(--hover-color);
-    text-align: left;
-}
-
-table th,
-table td {
-    padding: 0.5em 0.7em;
-    font-family: 'Source Serif Pro', serif;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: var(--bg-0);
-}
-
 .footnote-reference {
     font-family: var(--serif-font);
     font-size: 0.7rem;
@@ -169,4 +144,61 @@ table tbody tr:nth-child(even) {
 .references p {
     text-indent: -2.4rem;
     margin-left: 2.4rem;
+}
+
+.info-box {
+    border: 1px solid #087E96;
+    border-left-width: 0.3rem;
+    background-color: #d1f3f8;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#button-container {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    #comments-button, #top-button {
+        background-color: var(--bg-1);
+        padding: 0.4rem;
+        height: 1rem;
+        width: 1rem;
+        text-align: center;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: var(--bg-3);
+
+            svg {
+                fill: var(--primary-color);
+            }
+
+            &::before {
+            background-color: transparent;
+            }
+        }
+
+        svg {
+            width: 1rem;
+            height: 1rem;
+            fill: var(--text-color);
+        }
+    }
+
+    @media (max-width: 700px) {
+        #comments-button, #top-button {
+            display: none;
+        }
+    }
 }

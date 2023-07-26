@@ -1,7 +1,7 @@
 +++
 title = "Optimitza la càrrega amb un subconjunt de font personalitzat"
 date = 2023-04-29
-updated = 2023-05-25
+updated = 2023-07-08
 description = "Aprèn com crear un subconjunt personalitzat que només inclogui els glifs necessaris."
 
 [taxonomies]
@@ -102,7 +102,7 @@ if [ ! -f "$font_file" ]; then
 fi
 
 # Extreu el títol i els noms del menú del fitxer de configuració.
-title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"' | grep -v "atom feed")
+title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"')
 menu_names=$(awk -F' = ' '/^menu/{f=1;next} /socials/{f=0} f && /name/{print $2}' "$config_file" | cut -d',' -f1 | tr -d '"' )
 language_names=$(awk -F' = ' '/^language_name\./{print $2}' "$config_file" | tr -d '"' )
 
@@ -144,13 +144,13 @@ Guarda l'script a algun lloc com `~/bin/subset_font`. Fes-lo executable amb `chm
 
 Ara pots executar-lo amb les opcions requerides `--config` i `--font`:
 
-```
+```bash
 ~/bin/subset_font --config path/to/config.toml --font path/to/font.woff2
 ```
 
 De forma predeterminada, això generarà un fitxer `custom_subset.css` al directori actual. Utilitza `-o` o `--output` per especificar una ruta diferent:
 
-```
+```bash
 ~/bin/subset_font -c path/to/config.toml -f path/to/font.woff2 -o path/to/output
 ```
 
