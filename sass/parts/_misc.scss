@@ -97,20 +97,9 @@ a:hover {
     color: var(--hover-color);
 }
 
-a:not(.no-hover-padding)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -0.15em;
-    right: -0.15em;
-    z-index: -1;
+a code:hover {
     background-color: var(--primary-color);
-    opacity: 0;
-}
-
-a:not(.no-hover-padding):hover::before {
-    opacity: 1;
+    color: var(--hover-color);
 }
 
 @media screen and (max-width: 600px) {
