@@ -24,8 +24,6 @@
     font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
 @import 'parts/archive.scss';
 @import 'parts/cards.scss';
 @import 'parts/code.scss';
@@ -50,7 +48,7 @@
     --medium-layout-width: 400px;
     --small-layout-width: 200px;
 
-    --sans-serif-font: Roboto, sans-serif;
+    --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
     --serif-font: 'Source Serif', 'Georgia', serif;
     --code-font: 'JetBrains Mono', monospace;
 
@@ -138,7 +136,7 @@ article {
 
     p,
     li {
-        font-family: var(--sans-serif-font);
+        font-family: 'Arial', var(--sans-serif-font);
         line-height: 150%;
     }
 
