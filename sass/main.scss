@@ -230,7 +230,7 @@ p {
     font-size: 0.8rem;
 }
 
-li:not(.toc-container li) {
+li:not(.toc-container li):not(.archive li):not(nav-navs) {
     font-size: 0.8rem;
 }
 
