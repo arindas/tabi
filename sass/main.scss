@@ -137,7 +137,7 @@ article {
     p,
     li {
         font-family: 'Arial', var(--sans-serif-font);
-        line-height: 170%;
+        line-height: 150%;
     }
 
     .full-width {
@@ -227,7 +227,11 @@ p {
     margin-top: 1rem;
     margin-bottom: 1rem;
     line-height: 2rem;
-    font-size: 1em;
+    font-size: 0.8rem;
+}
+
+li:not(.toc-container li) {
+    font-size: 0.8rem;
 }
 
 strong {
