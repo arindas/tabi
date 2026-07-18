@@ -4,7 +4,8 @@
     src:
         local('Inter'),
         url('fonts/Inter4.woff2') format('woff2');
-    font-display: swap;
+    // Avoid a late font swap moving content after it has rendered.
+    font-display: optional;
 }
 
 @font-face {
