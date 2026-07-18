@@ -47,7 +47,11 @@
         {# Optional table of contents #}
         {% if page.extra.toc | default(value=false) %}
         {% if page.toc %}
-            <div class="toc-container">
+            <details class="toc-container" open>
+            <summary>
+                <span class="toc-mobile-label">On this page</span>
+                <span class="toc-current-section" aria-hidden="true"></span>
+            </summary>
             <h3>{%- if lang != config.default_language %} {{ trans(key="table_of_contents" | safe, lang=lang) }} {% else %} Table of Contents {% endif %}</h3>
             <ul>
                 {% for h1 in page.toc %}
@@ -74,7 +78,17 @@
                 </li>
                 {% endfor %}
             </ul>
-            </div>
+            </details>
+            <button class="toc-mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-toc-drawer" aria-label="Open table of contents">
+                <span aria-hidden="true">‹</span>
+            </button>
+            <aside class="toc-mobile-drawer" id="mobile-toc-drawer" aria-label="Table of Contents" aria-hidden="true" inert>
+                <div class="toc-mobile-drawer-header">
+                    <strong>On this page</strong>
+                    <button class="toc-mobile-close" type="button" aria-label="Close table of contents">›</button>
+                </div>
+                <nav class="toc-mobile-drawer-content" aria-label="Table of Contents"></nav>
+            </aside>
         {% endif %}
         {% endif %}
 
